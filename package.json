@@ -1,0 +1,26 @@
+{
+  "name": "cloverleaf-cli",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "npx pkg basic.js --public-packages '*' --public --out-path build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloverleaf/cli.git"
+  },
+  "author": "Allie Law",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cloverleaf/cli/issues"
+  },
+  "homepage": "https://github.com/cloverleaf/cli#readme",
+  "devDependencies": {
+    "pkg": "^5.3.1"
+  },
+  "dependencies": {
+    "cloverleaf": "^2.3.0"
+  }
+}
