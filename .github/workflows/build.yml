@@ -10,8 +10,21 @@ jobs:
       - name: Build
         run: npm install && npm run package
 
-      - name: Upload
+      # Uploade each artifact separately
+      - name: Upload Linux
         uses: actions/upload-artifact@v2
         with:
-          name: cloverleaf
-          path: build/cloverleaf-*
+          name: cloverleaf-linux
+          path:  build/cloverleaf-linux
+
+      - name: Upload Windows
+        uses: actions/upload-artifact@v2
+        with:
+          name: cloverleaf-win
+          path:  build/cloverleaf-win.exe
+
+      - name: Upload Mac
+        uses: actions/upload-artifact@v2
+        with:
+          name: cloverleaf-mac
+          path:  build/cloverleaf-mac
