@@ -1,5 +1,5 @@
 const cloverleaf = require('cloverleaf')
-const yargs = require('yargs');
+const yargs = require('yargs')
 
 const argv = yargs
 
@@ -23,29 +23,32 @@ const argv = yargs
   .option('nopreset', {
     alias: 'n',
     describe: 'Don\'t use the preset of the same name',
-    type: 'boolean',
+    type: 'boolean'
   })
 
   .help()
   .alias('help', 'h')
-  .argv;
+  .argv
 
-let length = argv.length;
-let usePreset = !argv.nopreset;
-let app = argv.app;
-let password = argv.password;
+const length = argv.length
+const usePreset = !argv.nopreset
+const app = argv.app
+const password = argv.password
+let toPass
 
 if (length) {
   // If all args are provided
-  to_pass = [app, password, usePreset, length]
+  toPass = [app, password, usePreset, length]
 } else if (usePreset) {
-  to_pass = [app, password, usePreset]
+  toPass = [app, password, usePreset]
 } else {
-  to_pass = [app, password]
+  toPass = [app, password]
 }
 
 try {
-  console.log(cloverleaf.process(...to_pass))
+  console.log(cloverleaf.process(...toPass))
+  process.exit(0)
 } catch (e) {
-  console.log(e.message)
+  console.error(e.message)
+  process.exit(1)
 }
